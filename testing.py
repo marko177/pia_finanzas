@@ -29,7 +29,7 @@ estado_financiero2021["cuentasporpagar"] = 478
 estado_financiero2021["documentosporpagar"] = 99
 estado_financiero2021["impuestos"] = 134
 estado_financiero2021["hipotecasporpagarlargoplazo"] = 1279
-print(estado_financiero2021)
+
 
 estado_financiero2022 = {}
 
@@ -109,9 +109,26 @@ balance_general2021["total_pasivos"] = balance_general2021["pasivo_corto_plazo"]
 balance_general2021["total_capital_contable"] = balance_general2021["capital_contribuido"] + balance_general2021["capital_ganado"]
 
 
-print(estado_de_resultados2021)
-print(balance_general2021)
-print(balance_general2021["total_activos"] == (balance_general2021["total_pasivos"] + balance_general2021["total_capital_contable"]))
+#print(estado_de_resultados2021)
+#print(balance_general2021)
+#print(balance_general2021["total_activos"] == (balance_general2021["total_pasivos"] + balance_general2021["total_capital_contable"]))
+
+#**No se si asi esta bien, o si era usando .get y almacenando en valor a imprimir en una variable.
+print("Balance General 2021\n")
+#Mostrar Activos
+print(f'Activo Circulante:$ {balance_general2021["activo_circulante"]}')
+print(f'Activo No circulante:$ {balance_general2021["activo_no_circulante"]}')
+print(f'Total de Activos:$ {balance_general2021["total_activos"]}\n')
+
+#Mostrar Pasivos
+print(f'Pasivos a Corto plazo:$ {balance_general2021["pasivo_corto_plazo"]}')
+print(f'Pasivos a Largo plazo:$ {balance_general2021["pasivo_largo_plazo"]}')
+print(f'Total de Pasivos:$ {balance_general2021["total_pasivos"]}\n')
+
+#Mostrar Capital Contable
+print(f'Capital Contribuido:$ {balance_general2021["capital_contribuido"]}')
+print(f'Capital Ganado:$ {balance_general2021["capital_ganado"]}')
+print(f'Total de Capital Contable:$ {balance_general2021["total_capital_contable"]}\n')
 
 estado_de_resultados2022 = {
     "utilidad_bruta": estado_financiero2022["ventas"] - estado_financiero2022["costodeventas"]
@@ -159,6 +176,22 @@ balance_general2022["total_pasivos"] = balance_general2022["pasivo_corto_plazo"]
 balance_general2022["total_capital_contable"] = balance_general2022["capital_contribuido"] + balance_general2022["capital_ganado"]
 
 
-print(estado_de_resultados2022)
-print(balance_general2022)
-print(balance_general2022["total_activos"] == (balance_general2022["total_pasivos"] + balance_general2022["total_capital_contable"]))
+#print(estado_de_resultados2022)
+#print(balance_general2022)
+#print(balance_general2022["total_activos"] == (balance_general2022["total_pasivos"] + balance_general2022["total_capital_contable"]))
+
+print("Balance General 2022\n")
+#Mostrar Activos
+print(f'Activo Circulante:$ {balance_general2022["activo_circulante"]}')
+print(f'Activo No circulante:$ {balance_general2022["activo_no_circulante"]}')
+print(f'Total de Activos:$ {balance_general2022["total_activos"]}\n')
+
+#Mostrar Pasivos
+print(f'Pasivos a Corto plazo:$ {balance_general2022["pasivo_corto_plazo"]}')
+print(f'Pasivos a Largo plazo:$ {balance_general2022["pasivo_largo_plazo"]}')
+print(f'Total de Pasivos:$ {balance_general2022["total_pasivos"]}\n')
+
+#Mostrar Capital Contable
+print(f'Capital Contribuido:$ {balance_general2022["capital_contribuido"]}')
+print(f'Capital Ganado:$ {balance_general2022["capital_ganado"]}')
+print(f'Total de Capital Contable:$ {balance_general2022["total_capital_contable"]}\n')
