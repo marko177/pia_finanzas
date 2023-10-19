@@ -1,3 +1,5 @@
+from tabulate import tabulate
+
 estado_financiero2021 = {}
 
 estado_financiero2021["cuentasxcobrar"] = 629
@@ -113,22 +115,38 @@ balance_general2021["total_capital_contable"] = balance_general2021["capital_con
 #print(balance_general2021)
 #print(balance_general2021["total_activos"] == (balance_general2021["total_pasivos"] + balance_general2021["total_capital_contable"]))
 
-#**No se si asi esta bien, o si era usando .get y almacenando en valor a imprimir en una variable.
-print("Balance General 2021\n")
-#Mostrar Activos
-print(f'Activo Circulante:$ {balance_general2021["activo_circulante"]}')
-print(f'Activo No circulante:$ {balance_general2021["activo_no_circulante"]}')
-print(f'Total de Activos:$ {balance_general2021["total_activos"]}\n')
+tabla_bg2021 = [["BALANCE GENERAL 2021","","","",""],
+                ["Efectivo","",f"${estado_financiero2021['efectivo']:,.2f}","",""],
+                ["Cuentas por Cobrar","",f"${estado_financiero2021['cuentasxcobrar']:,.2f}","",""],
+                ["Inventarios","",f"${estado_financiero2021['inventarios']:,.2f}","",""],
+                ["Inversiones","",f"${estado_financiero2021['inversiones']:,.2f}",f"${balance_general2021['activo_circulante']:,.2f}",""],
+                ["","","","",""],
+                ["Terrenos y Edificios","",f"${estado_financiero2021['terrenoyedificios']:,.2f}","",""],
+                ["Maq. y Equipo","",f"${estado_financiero2021['maquinariayequipo']:,.2f}","",""],
+                ["Mobiliario y Accesorios","",f"${estado_financiero2021['mobiliarioyaccesorios']:,.2f}","",""],
+                ["Eq. de Computo","",f"${estado_financiero2021['equipodecomputo']:,.2f}","",""],
+                ["Eq. de Transporte","",f"${estado_financiero2021['equipodetransporte']:,.2f}","",""],
+                ["Depr. Acumulada de Activos Fijos","",f"${estado_financiero2021['depreciacionacumuladaactivosfijos']:,.2f}",f"${balance_general2021['activo_no_circulante']:,.2f}",""],
+                ["","","","",""],
+                ["Gastos Preoperatorios","",f"${estado_financiero2021['gastospreoperativos']:,.2f}",f"${balance_general2021['otros_activos']:,.2f}",""],
+                ["","","","Total Activos",f"${balance_general2021['total_activos']:,.2f}"],
+                ["Acreedores Diversos","",f"${estado_financiero2021['acreedoresdiversos']:,.2f}","",""],
+                ["Cuentas por pagar","",f"${estado_financiero2021['cuentasporpagar']:,.2f}","",""],
+                ["Documentos por pagar","",f"${estado_financiero2021['documentosporpagar']:,.2f}","",""],
+                ["Impuestos","",f"${estado_financiero2021['impuestos']:,.2f}",f"${balance_general2021['pasivo_corto_plazo']:,.2f}",""],
+                ["","","","",""],
+                ["Hipotecas por pagar a largo plazo","",f"${estado_financiero2021['hipotecasporpagarlargoplazo']:,.2f}",f"${balance_general2021['pasivo_largo_plazo']:,.2f}",""],
+                ["","","","Total Pasivos",f"${balance_general2021['total_pasivos']:,.2f}"],
+                ["Capital Social","",f"${estado_financiero2021['capitalsocial']:,.2f}","",""],
+                ["Reserva Legal","",f"${estado_financiero2021['reservalegal']:,.2f}","",""],
+                ["Aportaciones para futuros aumentos de capital","",f"${estado_financiero2021['aportacionesparafuturosaumentosdecapital']:,.2f}",f"${balance_general2021['capital_contribuido']:,.2f}",""],
+                ["","","","",""],
+                ["Utilidades ejercicios anteriores","",f"${estado_financiero2021['utilidadesyejerciciosanteriores']:,.2f}","",""],
+                ["Utilidad del ejercicio","",f"${estado_de_resultados2021['utilidad_del_ejercicio']:,.2f}",f"${balance_general2021['capital_ganado']:,.2f}",""],
+                ["","","","Total Capital Contable",f"${balance_general2021['total_capital_contable']:,.2f}"]]
 
-#Mostrar Pasivos
-print(f'Pasivos a Corto plazo:$ {balance_general2021["pasivo_corto_plazo"]}')
-print(f'Pasivos a Largo plazo:$ {balance_general2021["pasivo_largo_plazo"]}')
-print(f'Total de Pasivos:$ {balance_general2021["total_pasivos"]}\n')
-
-#Mostrar Capital Contable
-print(f'Capital Contribuido:$ {balance_general2021["capital_contribuido"]}')
-print(f'Capital Ganado:$ {balance_general2021["capital_ganado"]}')
-print(f'Total de Capital Contable:$ {balance_general2021["total_capital_contable"]}\n')
+print(tabulate(tabla_bg2021, headers="firstrow", tablefmt="fancy_grid"))
+print()
 
 estado_de_resultados2022 = {
     "utilidad_bruta": estado_financiero2022["ventas"] - estado_financiero2022["costodeventas"]
@@ -180,18 +198,34 @@ balance_general2022["total_capital_contable"] = balance_general2022["capital_con
 #print(balance_general2022)
 #print(balance_general2022["total_activos"] == (balance_general2022["total_pasivos"] + balance_general2022["total_capital_contable"]))
 
-print("Balance General 2022\n")
-#Mostrar Activos
-print(f'Activo Circulante:$ {balance_general2022["activo_circulante"]}')
-print(f'Activo No circulante:$ {balance_general2022["activo_no_circulante"]}')
-print(f'Total de Activos:$ {balance_general2022["total_activos"]}\n')
+tabla_bg2022 = [["BALANCE GENERAL 2022","","","",""],
+                ["Efectivo","",f"${estado_financiero2022['efectivo']:,.2f}","",""],
+                ["Cuentas por Cobrar","",f"${estado_financiero2022['cuentasxcobrar']:,.2f}","",""],
+                ["Inventarios","",f"${estado_financiero2022['inventarios']:,.2f}","",""],
+                ["Inversiones","",f"${estado_financiero2022['inversiones']:,.2f}",f"${balance_general2022['activo_circulante']:,.2f}",""],
+                ["","","","",""],
+                ["Terrenos y Edificios","",f"${estado_financiero2022['terrenoyedificios']:,.2f}","",""],
+                ["Maq. y Equipo","",f"${estado_financiero2022['maquinariayequipo']:,.2f}","",""],
+                ["Mobiliario y Accesorios","",f"${estado_financiero2022['mobiliarioyaccesorios']:,.2f}","",""],
+                ["Eq. de Computo","",f"${estado_financiero2022['equipodecomputo']:,.2f}","",""],
+                ["Eq. de Transporte","",f"${estado_financiero2022['equipodetransporte']:,.2f}","",""],
+                ["Depr. Acumulada de Activos Fijos","",f"${estado_financiero2022['depreciacionacumuladaactivosfijos']:,.2f}",f"${balance_general2022['activo_no_circulante']:,.2f}",""],
+                ["","","","",""],
+                ["Gastos Preoperatorios","",f"${estado_financiero2022['gastospreoperativos']:,.2f}",f"${balance_general2022['otros_activos']:,.2f}",""],
+                ["","","","Total Activos",f"${balance_general2022['total_activos']:,.2f}"],
+                ["Acreedores Diversos","",f"${estado_financiero2022['acreedoresdiversos']:,.2f}","",""],
+                ["Cuentas por pagar","",f"${estado_financiero2022['cuentasporpagar']:,.2f}","",""],
+                ["Documentos por pagar","",f"${estado_financiero2022['documentosporpagar']:,.2f}","",""],
+                ["Impuestos","",f"${estado_financiero2022['impuestos']:,.2f}",f"${balance_general2022['pasivo_corto_plazo']:,.2f}",""],
+                ["","","","",""],
+                ["Hipotecas por pagar a largo plazo","",f"${estado_financiero2022['hipotecasporpagarlargoplazo']:,.2f}",f"${balance_general2022['pasivo_largo_plazo']:,.2f}",""],
+                ["","","","Total Pasivos",f"${balance_general2022['total_pasivos']:,.2f}"],
+                ["Capital Social","",f"${estado_financiero2022['capitalsocial']:,.2f}","",""],
+                ["Reserva Legal","",f"${estado_financiero2022['reservalegal']:,.2f}","",""],
+                ["Aportaciones para futuros aumentos de capital","",f"${estado_financiero2022['aportacionesparafuturosaumentosdecapital']:,.2f}",f"${balance_general2022['capital_contribuido']:,.2f}",""],
+                ["","","","",""],
+                ["Utilidades ejercicios anteriores","",f"${estado_financiero2022['utilidadesyejerciciosanteriores']:,.2f}","",""],
+                ["Utilidad del ejercicio","",f"${estado_de_resultados2022['utilidad_del_ejercicio']:,.2f}",f"${balance_general2022['capital_ganado']:,.2f}",""],
+                ["","","","Total Capital Contable",f"${balance_general2022['total_capital_contable']:,.2f}"]]
 
-#Mostrar Pasivos
-print(f'Pasivos a Corto plazo:$ {balance_general2022["pasivo_corto_plazo"]}')
-print(f'Pasivos a Largo plazo:$ {balance_general2022["pasivo_largo_plazo"]}')
-print(f'Total de Pasivos:$ {balance_general2022["total_pasivos"]}\n')
-
-#Mostrar Capital Contable
-print(f'Capital Contribuido:$ {balance_general2022["capital_contribuido"]}')
-print(f'Capital Ganado:$ {balance_general2022["capital_ganado"]}')
-print(f'Total de Capital Contable:$ {balance_general2022["total_capital_contable"]}\n')
+print(tabulate(tabla_bg2022, headers="firstrow", tablefmt="fancy_grid"))      
