@@ -113,6 +113,32 @@ balance_general2021["total_pasivos"] = balance_general2021["pasivo_corto_plazo"]
 balance_general2021["total_capital_contable"] = balance_general2021["capital_contribuido"] + balance_general2021[
     "capital_ganado"]
 
+tabla_er2021 = [[" ESTADO DE RESULTADOS 2021 ","","","",""],
+                ["","1","2","3","4"],
+                ["Ventas","","","",f"${estado_financiero2021['ventas']}"],
+                ["Costo de Ventas","","","",f"${estado_financiero2021['costodeventas']}"],
+                ["","","","Utilidad Bruta",f"${estado_de_resultados2021['utilidad_bruta']}"],
+                ["","","","",""],
+                ["Gastos de venta","","",f"${estado_financiero2021['gastosdeventas']}",""],
+                ["Gastos de Administracion","","",f"${estado_financiero2021['gastosdeadministracion']}",""],
+                ["Gastos x Depreciación","","",f"${estado_financiero2021['gastospordepreciacion']}",""],
+                ["Gastos Financieros","",f"${estado_financiero2021['gastosfinancieros']}","",""],
+                ["Productos Financieros","",f"${estado_financiero2021['productosfinancieros']}","",""],
+                ["Resul. Intgrl d Finan.","",f"${estado_de_resultados2021['resultado_integral_financiamento']}","",""],
+                ["","","","Total de Gastos Operativos",f"${estado_de_resultados2021['total_gastos_operacion']}"],
+                ["","","","Utilidad Operativa",f"${estado_de_resultados2021['utilidad_operativa']}"],
+                ["","","","",""],
+                ["Otros Gastos","","",f"${estado_financiero2021['otrosgastos']}",""],
+                ["Otros Productos","","",f"${estado_financiero2021['otrosproductos']}",""],
+                ["","","","Total de Otros Gastos y Productos",f"${estado_de_resultados2021['total_otros_gastos']}"],
+                ["","","","Utilidad Antes de Impuestos",f"${estado_de_resultados2021['utilidad_antes_impuestos']}"],
+                ["","","","",""],
+                ["ISR","","30%",f"${estado_de_resultados2021['isr']}",""],
+                ["PTU","","10%",f"${estado_de_resultados2021['ptu']}",""],
+                ["","","","Total de Impuestos x Pagar",f"${estado_de_resultados2021['impuestos_por_pagar']}"],
+                ["","","","Utilidad Neta del Ejercicio",f"${estado_de_resultados2021['utilidad_del_ejercicio']}"]
+                ]
+
 tabla_bg2021 = [["BALANCE GENERAL 2021", "", "", "", ""],
                 ["Efectivo", "", f"${estado_financiero2021['efectivo']:,.2f}", "", ""],
                 ["Cuentas por Cobrar", "", f"${estado_financiero2021['cuentasxcobrar']:,.2f}", "", ""],
@@ -173,10 +199,10 @@ estado_de_resultados2022["total_otros_gastos"] = (
 estado_de_resultados2022["utilidad_antes_impuestos"] = estado_de_resultados2022["utilidad_operativa"] - \
                                                        estado_de_resultados2022["total_otros_gastos"]
 estado_de_resultados2022["isr"] = estado_de_resultados2022["utilidad_antes_impuestos"] * 0.30
-estado_de_resultados2022["ptu"] = estado_de_resultados2022["utilidad_antes_impuestos"] * 0.10
-estado_de_resultados2022["impuestos_por_pagar"] = estado_de_resultados2022["isr"] + estado_de_resultados2022["ptu"]
-estado_de_resultados2022["utilidad_del_ejercicio"] = estado_de_resultados2022["utilidad_antes_impuestos"] - \
-                                                     estado_de_resultados2022["impuestos_por_pagar"]
+estado_de_resultados2022["ptu"] = round(estado_de_resultados2022["utilidad_antes_impuestos"] * 0.10,2)
+estado_de_resultados2022["impuestos_por_pagar"] = round(estado_de_resultados2022["isr"] + estado_de_resultados2022["ptu"],2)
+estado_de_resultados2022["utilidad_del_ejercicio"] = round(estado_de_resultados2022["utilidad_antes_impuestos"] - \
+                                                     estado_de_resultados2022["impuestos_por_pagar"],2)
 
 balance_general2022 = {
     "activo_circulante": estado_financiero2022["cuentasxcobrar"] + estado_financiero2022["efectivo"] +
@@ -204,6 +230,33 @@ balance_general2022["total_capital_contable"] = balance_general2022["capital_con
     "capital_ganado"]
 
 # print(tabulate(tabla_bg2021, headers="firstrow", tablefmt="fancy_grid"))
+print(tabulate(tabla_er2021, headers="firstrow", tablefmt="fancy_grid"))
+
+tabla_er2022 = [[" ESTADO DE RESULTADOS 2022 ","","","",""],
+                ["","1","2","3","4"],
+                ["Ventas","","","",f"${estado_financiero2022['ventas']}"],
+                ["Costo de Ventas","","","",f"${estado_financiero2022['costodeventas']}"],
+                ["","","","Utilidad Bruta",f"${estado_de_resultados2022['utilidad_bruta']}"],
+                ["","","","",""],
+                ["Gastos de venta","","",f"${estado_financiero2022['gastosdeventas']}",""],
+                ["Gastos de Administracion","","",f"${estado_financiero2022['gastosdeadministracion']}",""],
+                ["Gastos x Depreciación","","",f"${estado_financiero2022['gastospordepreciacion']}",""],
+                ["Gastos Financieros","",f"${estado_financiero2022['gastosfinancieros']}","",""],
+                ["Productos Financieros","",f"${estado_financiero2022['productosfinancieros']}","",""],
+                ["Resul. Intgrl d Finan.","",f"${estado_de_resultados2022['resultado_integral_financiamento']}","",""],
+                ["","","","Total de Gastos Operativos",f"${estado_de_resultados2022['total_gastos_operacion']}"],
+                ["","","","Utilidad Operativa",f"${estado_de_resultados2022['utilidad_operativa']}"],
+                ["","","","",""],
+                ["Otros Gastos","","",f"${estado_financiero2022['otrosgastos']}",""],
+                ["Otros Productos","","",f"${estado_financiero2022['otrosproductos']}",""],
+                ["","","","Total de Otros Gastos y Productos",f"${estado_de_resultados2022['total_otros_gastos']}"],
+                ["","","","Utilidad Antes de Impuestos",f"${estado_de_resultados2022['utilidad_antes_impuestos']}"],
+                ["","","","",""],
+                ["ISR","","30%",f"${estado_de_resultados2022['isr']}",""],
+                ["PTU","","10%",f"${estado_de_resultados2022['ptu']}",""],
+                ["","","","Total de Impuestos x Pagar",f"${estado_de_resultados2022['impuestos_por_pagar']}"],
+                ["","","","Utilidad Neta del Ejercicio",f"${estado_de_resultados2022['utilidad_del_ejercicio']}"]
+                ]
 
 tabla_bg2022 = [["BALANCE GENERAL 2022", "", "", "", ""],
                 ["Efectivo", "", f"${estado_financiero2022['efectivo']:,.2f}", "", ""],
@@ -247,6 +300,7 @@ tabla_bg2022 = [["BALANCE GENERAL 2022", "", "", "", ""],
                 ["", "", "", "Total Capital Contable", f"${balance_general2022['total_capital_contable']:,.2f}"]]
 
 # print(tabulate(tabla_bg2022, headers="firstrow", tablefmt="fancy_grid"))
+print(tabulate(tabla_er2022, headers="firstrow", tablefmt="fancy_grid"))
 
 bg = [["LA COSTEÑITA.COM SA DE CV ", "", "", "", ""],
       ["Balance General", "", "", "", ""],
