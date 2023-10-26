@@ -230,7 +230,7 @@ balance_general2022["total_capital_contable"] = balance_general2022["capital_con
     "capital_ganado"]
 
 # print(tabulate(tabla_bg2021, headers="firstrow", tablefmt="fancy_grid"))
-print(tabulate(tabla_er2021, headers="firstrow", tablefmt="fancy_grid"))
+# print(tabulate(tabla_er2021, headers="firstrow", tablefmt="fancy_grid"))
 
 tabla_er2022 = [[" ESTADO DE RESULTADOS 2022 ","","","",""],
                 ["","1","2","3","4"],
@@ -300,7 +300,7 @@ tabla_bg2022 = [["BALANCE GENERAL 2022", "", "", "", ""],
                 ["", "", "", "Total Capital Contable", f"${balance_general2022['total_capital_contable']:,.2f}"]]
 
 # print(tabulate(tabla_bg2022, headers="firstrow", tablefmt="fancy_grid"))
-print(tabulate(tabla_er2022, headers="firstrow", tablefmt="fancy_grid"))
+# print(tabulate(tabla_er2022, headers="firstrow", tablefmt="fancy_grid"))
 
 bg = [["LA COSTEÑITA.COM SA DE CV ", "", "", "", ""],
       ["Balance General", "", "", "", ""],
