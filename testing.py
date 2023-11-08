@@ -324,6 +324,21 @@ rotacion_anc2022 = estado_financiero2022["ventas"] / balance_general2022["activo
 rotacion_at2021 = estado_financiero2021["ventas"] / balance_general2021["total_activos"]
 rotacion_at2022 = estado_financiero2022["ventas"] / balance_general2022["total_activos"]
 
+# Ciclo de Conversion de Efectivo
+
+capital_de_trabajo2021 = balance_general2021["activo_circulante"] - balance_general2021["pasivo_corto_plazo"]
+capital_de_trabajo2022 = balance_general2022["activo_circulante"] - balance_general2022["pasivo_corto_plazo"]
+epi_2021 = 360 / rotacion_inv2021
+epi_2022 = 360 / rotacion_inv2022
+ppc_2021 = 360 / rotacion_cxc2021
+ppc_2022 = 360 / rotacion_cxc2022
+ppp_2021 = 360 / rotacioncxp2021
+ppp_2022 = 360 / rotacioncxp2022
+ciclo_operativo2021 = epi_2021 + ppc_2021
+ciclo_operativo2022 = epi_2022 + ppc_2022
+ciclo_conversion_efectivo2021 = ppp_2021 - ciclo_operativo2021
+ciclo_conversion_efectivo2022 = ppp_2022 - ciclo_operativo2022
+
 # Liquidez
 
 liquidez2021 = balance_general2021["activo_circulante"] / balance_general2021["pasivo_corto_plazo"]
@@ -378,7 +393,15 @@ razones_financieras = [["Razones Financieras", "", "2021", "2022"],
                                 f"{rotacion_anc2022:.2f}"],
                             ["Rotacion de Activos Totales", "", f"{rotacion_at2021:.2f}",
                                 f"{rotacion_at2022:.2f}"],
-                       ["", "", "", ""],
+                            ["", "", "", ""],
+                            ["Ciclo de Conversión de Efectivo", "", "", ""],
+                            ["Capital de Trabajo", "", f"${capital_de_trabajo2021:.2f}", f"${capital_de_trabajo2022:.2f}"],
+                            ["Edad Promedio de Inventarios", "", f"{epi_2021:.2f}", f"{epi_2022:.2f}"],
+                            ["Periodo Promedio de Cobro", "", f"{ppc_2021:.2f}", f"{ppc_2022:.2f}"],
+                            ["Periodo Promedio de Pago", "", f"{ppp_2021:.2f}", f"{ppp_2022:.2f}"],
+                            ["Ciclo Operativo", "", f"{ciclo_operativo2021:.2f}", f"{ciclo_operativo2022:.2f}"],
+                            ["Ciclo de Conversión de Efectivo", "", f"{ciclo_conversion_efectivo2021:.2f}", f"{ciclo_conversion_efectivo2022:.2f}"],
+                            ["", "", "", ""],
                             ["Razones de Liquidez", "", "2021", "2022"],
                             ["Liquidez", "", f"{liquidez2021:.2f}", f"{liquidez2022:.2f}"],
                             ["Prueba Acida", "", f"{prueba_acida2021:.2f}", f"{prueba_acida2022:.2f}"],
@@ -405,6 +428,20 @@ razones_financieras = [["Razones Financieras", "", "2021", "2022"],
                                 f"{rendimiento_capital2022:.2f}"]]
 
 print(tabulate(razones_financieras, headers="firstrow", tablefmt="fancy_grid"))
+
+print("")
+print("Interpretaciones de las Razones Financieras.\n")
+# Interpretaciones de Razones de Actividad.
+print(f"La empresa {'aumentó' if rotacion_inv2021 < rotacion_inv2022 else 'disminuyó'} su Rotación de Inventario del 2021 al 2022.\n")
+print(f"La empresa {'aumentó' if rotacion_cxc2021 < rotacion_cxc2022 else 'disminuyó'} su Rotación de Cuentas por Cobrar del 2021 al 2022.\n")
+print(f"La empresa {'aumentó' if rotacioncxp2021 < rotacioncxp2022 else 'disminuyó'} su Rotación de Cuentas por Pagar del 2021 al 2022.\n")
+print(f"La empresa {'aumentó' if rotacion_anc2021 < rotacion_anc2022 else 'disminuyó'} su Rotación de Activos Fijos del 2021 al 2022.\n")
+print(f"La empresa {'aumentó' if rotacion_at2021 < rotacion_at2022 else 'disminuyó'} su Rotación de Activos Totales del 2021 al 2022.\n")
+
+
+print(f"La empresa tiene una razón circulante {'dentro del' if 1 < liquidez2021 < 2 else 'fuera del'} rango aceptable y "
+      f"del ej 2021 al 2022 {'mejoro' if liquidez2022 > liquidez2021 else 'empeoro'} su razón circulante en "
+      f"{abs(liquidez2022 - liquidez2021):.2f}.\n")
 
 # Analisis DuPont
 
