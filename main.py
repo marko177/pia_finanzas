@@ -175,7 +175,7 @@ balance_general2021["total_pasivos"] = balance_general2021["pasivo_corto_plazo"]
 balance_general2021["total_capital_contable"] = balance_general2021["capital_contribuido"] + balance_general2021[
     "capital_ganado"]
 
-tabla_er2021 = [[" ESTADO DE RESULTADOS {starting_year ", "", "", "", ""],
+tabla_er2021 = [[f" ESTADO DE RESULTADOS {starting_year} ", "", "", "", ""],
                 ["", "1", "2", "3", "4"],
                 ["Ventas", "", "", "", f"${estado_financiero2021['ventas']}"],
                 ["Costo de Ventas", "", "", "", f"${estado_financiero2021['costodeventas']}"],
@@ -202,7 +202,7 @@ tabla_er2021 = [[" ESTADO DE RESULTADOS {starting_year ", "", "", "", ""],
                 ["", "", "", "Utilidad Neta del Ejercicio", f"${estado_de_resultados2021['utilidad_del_ejercicio']}"]
                 ]
 
-tabla_bg2021 = [["BALANCE GENERAL {starting_year", "", "", "", ""],
+tabla_bg2021 = [[f"BALANCE GENERAL {starting_year}", "", "", "", ""],
                 ["Efectivo", "", f"${estado_financiero2021['efectivo']:,.2f}", "", ""],
                 ["Cuentas por Cobrar", "", f"${estado_financiero2021['cuentasxcobrar']:,.2f}", "", ""],
                 ["Inventarios", "", f"${estado_financiero2021['inventarios']:,.2f}", "", ""],
@@ -293,7 +293,7 @@ balance_general2022["total_pasivos"] = balance_general2022["pasivo_corto_plazo"]
 balance_general2022["total_capital_contable"] = balance_general2022["capital_contribuido"] + balance_general2022[
     "capital_ganado"]
 
-tabla_er2022 = [[" ESTADO DE RESULTADOS {ending_year} ", "", "", "", ""],
+tabla_er2022 = [[f" ESTADO DE RESULTADOS {ending_year} ", "", "", "", ""],
                 ["", "1", "2", "3", "4"],
                 ["Ventas", "", "", "", f"${estado_financiero2022['ventas']}"],
                 ["Costo de Ventas", "", "", "", f"${estado_financiero2022['costodeventas']}"],
@@ -320,7 +320,7 @@ tabla_er2022 = [[" ESTADO DE RESULTADOS {ending_year} ", "", "", "", ""],
                 ["", "", "", "Utilidad Neta del Ejercicio", f"${estado_de_resultados2022['utilidad_del_ejercicio']}"]
                 ]
 
-tabla_bg2022 = [["BALANCE GENERAL {ending_year}", "", "", "", ""],
+tabla_bg2022 = [[f"BALANCE GENERAL {ending_year}", "", "", "", ""],
                 ["Efectivo", "", f"${estado_financiero2022['efectivo']:,.2f}", "", ""],
                 ["Cuentas por Cobrar", "", f"${estado_financiero2022['cuentasxcobrar']:,.2f}", "", ""],
                 ["Inventarios", "", f"${estado_financiero2022['inventarios']:,.2f}", "", ""],
@@ -440,7 +440,7 @@ rendimiento_capital2022 = estado_de_resultados2022["utilidad_del_ejercicio"] / b
     "capital_contribuido"]
 
 razones_financieras = [["Razones Financieras", "", "", "", ""],
-                       ["Razones de Liquidez", "", "{starting_year", "{ending_year}", "Interpretación"],
+                       ["Razones de Liquidez", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
                        ["Liquidez", "", f"{liquidez2021:.2f}", f"{liquidez2022:.2f}",
                         f"La empresa tiene una razón circulante {'dentro del' if 1 <= liquidez2021 <= 2 else 'fuera del'} rango aceptable y"
                         f"\n del ejercicio del {starting_year} al {ending_year} {'mejoro' if liquidez2022 > liquidez2021 else 'empeoro'} su razón circulante en "
@@ -454,7 +454,7 @@ razones_financieras = [["Razones Financieras", "", "", "", ""],
                         f"\n{'incrementando un' if efectivo2022 > efectivo2021 else 'disminuyendo un'} "
                         f"{abs(efectivo2022 - efectivo2021):.2f} centavos del ejercicio del {starting_year} al {ending_year}."],
                        ["", "", "", ""],
-                       ["Razones de Actividad", "", "{starting_year", "{ending_year}", "Interpretación"],
+                       ["Razones de Actividad", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
                        ["Rotacion de Inventario", "", f"{rotacion_inv2021:.2f}", f"{rotacion_inv2022:.2f}",
                         f"La empresa {'aumentó' if rotacion_inv2021 < rotacion_inv2022 else 'disminuyó'} su Rotación de Inventario del "
                         f"{starting_year} al {ending_year}."],
@@ -475,7 +475,7 @@ razones_financieras = [["Razones Financieras", "", "", "", ""],
                         f"La empresa {'aumentó' if rotacion_at2021 < rotacion_at2022 else 'disminuyó'} su Rotación de Activos Totales del "
                         f"{starting_year} al {ending_year}."],
                        ["", "", "", ""],
-                       ["Ciclo de Conversión de Efectivo", "", "{starting_year", "{ending_year}", "Interpretación"],
+                       ["Ciclo de Conversión de Efectivo", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
                        ["Capital de Trabajo", "", f"${capital_de_trabajo2021:.2f}", f"${capital_de_trabajo2022:.2f}",
                         f"La empresa {'incrementó' if capital_de_trabajo2021 < capital_de_trabajo2022 else 'disminuyó'} su Capital de "
                         f"Trabajo del {starting_year} al {ending_year}."],
@@ -496,7 +496,7 @@ razones_financieras = [["Razones Financieras", "", "", "", ""],
                         f"La empresa {'incrementó' if ciclo_conversion_efectivo2021 < ciclo_conversion_efectivo2022 else 'disminuyó'}"
                         f"su Ciclo de Conversión de Efectivo del {starting_year} al {ending_year}."],
                        ["", "", "", ""],
-                       ["Razones de Endeudamiento", "", "{starting_year", "{ending_year}", "Interpretación"],
+                       ["Razones de Endeudamiento", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
                        ["Razon de Endeudamiento", "", f"{razon_endeudamiento2021:.2f}",
                         f"{razon_endeudamiento2022:.2f}",
                         f"La empresa esta financiada en un {razon_endeudamiento2022 * 100:.2f}%"
@@ -504,14 +504,22 @@ razones_financieras = [["Razones Financieras", "", "", "", ""],
                        ["Razon de Capital", "", f"{razon_capital2021:.2f}", f"{razon_capital2022:.2f}",
                         f"La empresa esta financiada en un {razon_capital2022 * 100:.2f}% de capital propio."],
                        ["Razón de Endeudamiento sobre Capital", "", f"{razon_deuda_capital2021:.2f}",
-                        f"{razon_deuda_capital2022:.2f}"],
+                        f"{razon_deuda_capital2022:.2f}", f"La empresa tiene una Razón de Endeudamiento sobre Capital de "
+                        f"{razon_deuda_capital2022 * 100:.2f}%."],
                        ["Razon de Cargos de Intereses Fijos", "", f"{razon_cargo_interes2021:.2f}",
-                        f"{razon_cargo_interes2022:.2f}"],
+                        f"{razon_cargo_interes2022:.2f}", f"La empresa tiene una Razón de Cargos de Intereses Fijos de "
+                        f"{razon_cargo_interes2022 * 100:.2f}%."],
                        ["", "", "", ""],
-                       ["Razones de Rentabilidad", "", "{starting_year", "{ending_year}", "Interpretación"],
-                       ["Margen de Utilidad", "", f"{margen_utilidad2021:.2f}", f"{margen_utilidad2022:.2f}"],
-                       ["Margen Bruto", "", f"{margen_bruto2021:.2f}", f"{margen_bruto2022:.2f}"],
-                       ["Margen Operativo", "", f"{margen_operativo2021:.2f}", f"{margen_operativo2022:.2f}"],
+                       ["Razones de Rentabilidad", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
+                       ["Margen de Utilidad", "", f"{margen_utilidad2021:.2f}", f"{margen_utilidad2022:.2f}",
+                        f"La empresa {'incrementó' if margen_utilidad2021 < margen_utilidad2022 else 'disminuyó'} su Margen de Utilidad del "
+                        f"{starting_year} al {ending_year}."],
+                       ["Margen Bruto", "", f"{margen_bruto2021:.2f}", f"{margen_bruto2022:.2f}",
+                        f"La empresa {'incrementó' if margen_bruto2021 < margen_bruto2022 else 'disminuyó'} su Margen Bruto del "
+                        f"{starting_year} al {ending_year}."],
+                       ["Margen Operativo", "", f"{margen_operativo2021:.2f}", f"{margen_operativo2022:.2f}",
+                        f"La empresa {'incrementó' if margen_operativo2021 < margen_operativo2022 else 'disminuyó'} su Margen Operativo del "
+                        f"{starting_year} al {ending_year}."],
                        ["Rendimiento sobre Activos", "", f"{rendimiento_activos2021:.2f}",
                         f"{rendimiento_activos2022:.2f}",
                         f"La empresa {'incrementó' if rendimiento_activos2021 < rendimiento_activos2022 else 'disminuyó'} su Rendimiento sobre Activos del {starting_year} al {ending_year}."],
@@ -541,7 +549,7 @@ roa2022 = ros2022 * rota2022
 roe = roa2021 * maf2021
 roe2022 = roa2022 * maf2022
 
-analisis_dupont = [["Analisis DuPont", "", "{starting_year", "{ending_year}", "Interpretación"],
+analisis_dupont = [["Analisis DuPont", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
                    ["Margen de Utilidad Neta", "", f"{ros2021:.2%}", f"{ros2022:.2%}",
                     f"La empresa {'incrementó' if ros2021 < ros2022 else 'disminuyó'} su Margen de Utilidad Neta del {starting_year} al {ending_year}."],
                    ["Rotacion de Activos", "", f"{rota2021:.2%}", f"{rota2022:.2%}",

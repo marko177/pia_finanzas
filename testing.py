@@ -402,14 +402,22 @@ razones_financieras = [["Razones Financieras", "", "", "", ""],
                        ["Razon de Capital", "", f"{razon_capital2021:.2f}", f"{razon_capital2022:.2f}",
                         f"La empresa esta financiada en un {razon_capital2022 * 100:.2f}% de capital propio."],
                        ["Razón de Endeudamiento sobre Capital", "", f"{razon_deuda_capital2021:.2f}",
-                        f"{razon_deuda_capital2022:.2f}"],
+                        f"{razon_deuda_capital2022:.2f}", f"La empresa tiene una Razón de Endeudamiento sobre Capital de "
+                        f"{razon_deuda_capital2022 * 100:.2f}%."],
                        ["Razon de Cargos de Intereses Fijos", "", f"{razon_cargo_interes2021:.2f}",
-                        f"{razon_cargo_interes2022:.2f}"],
+                        f"{razon_cargo_interes2022:.2f}", f"La empresa tiene una Razón de Cargos de Intereses Fijos de "
+                        f"{razon_cargo_interes2022 * 100:.2f}%."],
                        ["", "", "", ""],
                        ["Razones de Rentabilidad", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
-                       ["Margen de Utilidad", "", f"{margen_utilidad2021:.2f}", f"{margen_utilidad2022:.2f}"],
-                       ["Margen Bruto", "", f"{margen_bruto2021:.2f}", f"{margen_bruto2022:.2f}"],
-                       ["Margen Operativo", "", f"{margen_operativo2021:.2f}", f"{margen_operativo2022:.2f}"],
+                       ["Margen de Utilidad", "", f"{margen_utilidad2021:.2f}", f"{margen_utilidad2022:.2f}",
+                        f"La empresa {'incrementó' if margen_utilidad2021 < margen_utilidad2022 else 'disminuyó'} su Margen de Utilidad del "
+                        f"{starting_year} al {ending_year}."],
+                       ["Margen Bruto", "", f"{margen_bruto2021:.2f}", f"{margen_bruto2022:.2f}",
+                        f"La empresa {'incrementó' if margen_bruto2021 < margen_bruto2022 else 'disminuyó'} su Margen Bruto del "
+                        f"{starting_year} al {ending_year}."],
+                       ["Margen Operativo", "", f"{margen_operativo2021:.2f}", f"{margen_operativo2022:.2f}",
+                        f"La empresa {'incrementó' if margen_operativo2021 < margen_operativo2022 else 'disminuyó'} su Margen Operativo del "
+                        f"{starting_year} al {ending_year}."],
                        ["Rendimiento sobre Activos", "", f"{rendimiento_activos2021:.2f}",
                         f"{rendimiento_activos2022:.2f}",
                         f"La empresa {'incrementó' if rendimiento_activos2021 < rendimiento_activos2022 else 'disminuyó'} su Rendimiento sobre Activos del {starting_year} al {ending_year}."],
