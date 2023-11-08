@@ -1,68 +1,28 @@
 from tabulate import tabulate
 
-estado_financiero2021 = {}
+starting_year = 2021
+ending_year = 2022
+header = [[f"Analisis Financiero de la Empresa La Costeñita.com SA de CV {starting_year} - {ending_year}"]]
+print(tabulate(header, tablefmt="fancy_grid"))
+estado_financiero2021 = {"cuentasxcobrar": 629, "efectivo": 454, "inventarios": 361, "inversiones": 85,
+                         "depreciacionacumuladaactivosfijos": 2291, "equipodecomputo": 123, "equipodetransporte": 344,
+                         "maquinariayequipo": 1750, "mobiliarioyaccesorios": 448, "terrenoyedificios": 2590,
+                         "aportacionesparafuturosaumentosdecapital": 535, "capitalsocial": 460, "reservalegal": 30,
+                         "utilidadesyejerciciosanteriores": 1130, "costodeventas": 2610, "gastosdeadministracion": 243,
+                         "gastosdeventas": 125, "gastosfinancieros": 116, "gastospordepreciacion": 299,
+                         "otrosgastos": 44, "otrosproductos": 10, "productosfinancieros": 5, "ventas": 3843,
+                         "gastospreoperativos": 138, "acreedoresdiversos": 65, "cuentasporpagar": 478,
+                         "documentosporpagar": 99, "impuestos": 134, "hipotecasporpagarlargoplazo": 1279}
 
-estado_financiero2021["cuentasxcobrar"] = 629
-estado_financiero2021["efectivo"] = 454
-estado_financiero2021["inventarios"] = 361
-estado_financiero2021["inversiones"] = 85
-estado_financiero2021["depreciacionacumuladaactivosfijos"] = 2291
-estado_financiero2021["equipodecomputo"] = 123
-estado_financiero2021["equipodetransporte"] = 344
-estado_financiero2021["maquinariayequipo"] = 1750
-estado_financiero2021["mobiliarioyaccesorios"] = 448
-estado_financiero2021["terrenoyedificios"] = 2590
-estado_financiero2021["aportacionesparafuturosaumentosdecapital"] = 535
-estado_financiero2021["capitalsocial"] = 460
-estado_financiero2021["reservalegal"] = 30
-estado_financiero2021["utilidadesyejerciciosanteriores"] = 1130
-estado_financiero2021["costodeventas"] = 2610
-estado_financiero2021["gastosdeadministracion"] = 243
-estado_financiero2021["gastosdeventas"] = 125
-estado_financiero2021["gastosfinancieros"] = 116
-estado_financiero2021["gastospordepreciacion"] = 299
-estado_financiero2021["otrosgastos"] = 44
-estado_financiero2021["otrosproductos"] = 10
-estado_financiero2021["productosfinancieros"] = 5
-estado_financiero2021["ventas"] = 3843
-estado_financiero2021["gastospreoperativos"] = 138
-estado_financiero2021["acreedoresdiversos"] = 65
-estado_financiero2021["cuentasporpagar"] = 478
-estado_financiero2021["documentosporpagar"] = 99
-estado_financiero2021["impuestos"] = 134
-estado_financiero2021["hipotecasporpagarlargoplazo"] = 1279
-
-estado_financiero2022 = {}
-
-estado_financiero2022["cuentasxcobrar"] = 456
-estado_financiero2022["efectivo"] = 393
-estado_financiero2022["inventarios"] = 375
-estado_financiero2022["inversiones"] = 64
-estado_financiero2022["depreciacionacumuladaactivosfijos"] = 2570
-estado_financiero2022["equipodecomputo"] = 120
-estado_financiero2022["equipodetransporte"] = 393
-estado_financiero2022["maquinariayequipo"] = 2110
-estado_financiero2022["mobiliarioyaccesorios"] = 395
-estado_financiero2022["terrenoyedificios"] = 2379
-estado_financiero2022["aportacionesparafuturosaumentosdecapital"] = 545
-estado_financiero2022["capitalsocial"] = 460
-estado_financiero2022["reservalegal"] = 35
-estado_financiero2022["utilidadesyejerciciosanteriores"] = 1080
-estado_financiero2022["costodeventas"] = 2139
-estado_financiero2022["gastosdeadministracion"] = 234
-estado_financiero2022["gastosdeventas"] = 135
-estado_financiero2022["gastosfinancieros"] = 114
-estado_financiero2022["gastospordepreciacion"] = 279
-estado_financiero2022["otrosgastos"] = 44
-estado_financiero2022["otrosproductos"] = 45
-estado_financiero2022["productosfinancieros"] = 10
-estado_financiero2022["ventas"] = 3209
-estado_financiero2022["gastospreoperativos"] = 138
-estado_financiero2022["acreedoresdiversos"] = 50
-estado_financiero2022["cuentasporpagar"] = 338
-estado_financiero2022["documentosporpagar"] = 124
-estado_financiero2022["impuestos"] = 93
-estado_financiero2022["hipotecasporpagarlargoplazo"] = 1209
+estado_financiero2022 = {"cuentasxcobrar": 456, "efectivo": 393, "inventarios": 375, "inversiones": 64,
+                         "depreciacionacumuladaactivosfijos": 2570, "equipodecomputo": 120, "equipodetransporte": 393,
+                         "maquinariayequipo": 2110, "mobiliarioyaccesorios": 395, "terrenoyedificios": 2379,
+                         "aportacionesparafuturosaumentosdecapital": 545, "capitalsocial": 460, "reservalegal": 35,
+                         "utilidadesyejerciciosanteriores": 1080, "costodeventas": 2139, "gastosdeadministracion": 234,
+                         "gastosdeventas": 135, "gastosfinancieros": 114, "gastospordepreciacion": 279,
+                         "otrosgastos": 44, "otrosproductos": 45, "productosfinancieros": 10, "ventas": 3209,
+                         "gastospreoperativos": 138, "acreedoresdiversos": 50, "cuentasporpagar": 338,
+                         "documentosporpagar": 124, "impuestos": 93, "hipotecasporpagarlargoplazo": 1209}
 
 estado_de_resultados2021 = {
     "utilidad_bruta": estado_financiero2021["ventas"] - estado_financiero2021["costodeventas"]
@@ -113,33 +73,34 @@ balance_general2021["total_pasivos"] = balance_general2021["pasivo_corto_plazo"]
 balance_general2021["total_capital_contable"] = balance_general2021["capital_contribuido"] + balance_general2021[
     "capital_ganado"]
 
-tabla_er2021 = [[" ESTADO DE RESULTADOS 2021 ","","","",""],
-                ["","1","2","3","4"],
-                ["Ventas","","","",f"${estado_financiero2021['ventas']}"],
-                ["Costo de Ventas","","","",f"${estado_financiero2021['costodeventas']}"],
-                ["","","","Utilidad Bruta",f"${estado_de_resultados2021['utilidad_bruta']}"],
-                ["","","","",""],
-                ["Gastos de venta","","",f"${estado_financiero2021['gastosdeventas']}",""],
-                ["Gastos de Administracion","","",f"${estado_financiero2021['gastosdeadministracion']}",""],
-                ["Gastos x Depreciación","","",f"${estado_financiero2021['gastospordepreciacion']}",""],
-                ["Gastos Financieros","",f"${estado_financiero2021['gastosfinancieros']}","",""],
-                ["Productos Financieros","",f"${estado_financiero2021['productosfinancieros']}","",""],
-                ["Resul. Intgrl d Finan.","",f"${estado_de_resultados2021['resultado_integral_financiamento']}","",""],
-                ["","","","Total de Gastos Operativos",f"${estado_de_resultados2021['total_gastos_operacion']}"],
-                ["","","","Utilidad Operativa",f"${estado_de_resultados2021['utilidad_operativa']}"],
-                ["","","","",""],
-                ["Otros Gastos","","",f"${estado_financiero2021['otrosgastos']}",""],
-                ["Otros Productos","","",f"${estado_financiero2021['otrosproductos']}",""],
-                ["","","","Total de Otros Gastos y Productos",f"${estado_de_resultados2021['total_otros_gastos']}"],
-                ["","","","Utilidad Antes de Impuestos",f"${estado_de_resultados2021['utilidad_antes_impuestos']}"],
-                ["","","","",""],
-                ["ISR","","30%",f"${estado_de_resultados2021['isr']}",""],
-                ["PTU","","10%",f"${estado_de_resultados2021['ptu']}",""],
-                ["","","","Total de Impuestos x Pagar",f"${estado_de_resultados2021['impuestos_por_pagar']}"],
-                ["","","","Utilidad Neta del Ejercicio",f"${estado_de_resultados2021['utilidad_del_ejercicio']}"]
+tabla_er2021 = [[f" ESTADO DE RESULTADOS {starting_year} ", "", "", "", ""],
+                ["", "1", "2", "3", "4"],
+                ["Ventas", "", "", "", f"${estado_financiero2021['ventas']}"],
+                ["Costo de Ventas", "", "", "", f"${estado_financiero2021['costodeventas']}"],
+                ["", "", "", "Utilidad Bruta", f"${estado_de_resultados2021['utilidad_bruta']}"],
+                ["", "", "", "", ""],
+                ["Gastos de venta", "", "", f"${estado_financiero2021['gastosdeventas']}", ""],
+                ["Gastos de Administracion", "", "", f"${estado_financiero2021['gastosdeadministracion']}", ""],
+                ["Gastos x Depreciación", "", "", f"${estado_financiero2021['gastospordepreciacion']}", ""],
+                ["Gastos Financieros", "", f"${estado_financiero2021['gastosfinancieros']}", "", ""],
+                ["Productos Financieros", "", f"${estado_financiero2021['productosfinancieros']}", "", ""],
+                ["Resul. Intgrl d Finan.", "", f"${estado_de_resultados2021['resultado_integral_financiamento']}", "",
+                 ""],
+                ["", "", "", "Total de Gastos Operativos", f"${estado_de_resultados2021['total_gastos_operacion']}"],
+                ["", "", "", "Utilidad Operativa", f"${estado_de_resultados2021['utilidad_operativa']}"],
+                ["", "", "", "", ""],
+                ["Otros Gastos", "", "", f"${estado_financiero2021['otrosgastos']}", ""],
+                ["Otros Productos", "", "", f"${estado_financiero2021['otrosproductos']}", ""],
+                ["", "", "", "Total de Otros Gastos y Productos", f"${estado_de_resultados2021['total_otros_gastos']}"],
+                ["", "", "", "Utilidad Antes de Impuestos", f"${estado_de_resultados2021['utilidad_antes_impuestos']}"],
+                ["", "", "", "", ""],
+                ["ISR", "", "30%", f"${estado_de_resultados2021['isr']}", ""],
+                ["PTU", "", "10%", f"${estado_de_resultados2021['ptu']}", ""],
+                ["", "", "", "Total de Impuestos x Pagar", f"${estado_de_resultados2021['impuestos_por_pagar']}"],
+                ["", "", "", "Utilidad Neta del Ejercicio", f"${estado_de_resultados2021['utilidad_del_ejercicio']}"]
                 ]
 
-tabla_bg2021 = [["BALANCE GENERAL 2021", "", "", "", ""],
+tabla_bg2021 = [[f"BALANCE GENERAL {starting_year}", "", "", "", ""],
                 ["Efectivo", "", f"${estado_financiero2021['efectivo']:,.2f}", "", ""],
                 ["Cuentas por Cobrar", "", f"${estado_financiero2021['cuentasxcobrar']:,.2f}", "", ""],
                 ["Inventarios", "", f"${estado_financiero2021['inventarios']:,.2f}", "", ""],
@@ -199,10 +160,11 @@ estado_de_resultados2022["total_otros_gastos"] = (
 estado_de_resultados2022["utilidad_antes_impuestos"] = estado_de_resultados2022["utilidad_operativa"] - \
                                                        estado_de_resultados2022["total_otros_gastos"]
 estado_de_resultados2022["isr"] = estado_de_resultados2022["utilidad_antes_impuestos"] * 0.30
-estado_de_resultados2022["ptu"] = round(estado_de_resultados2022["utilidad_antes_impuestos"] * 0.10,2)
-estado_de_resultados2022["impuestos_por_pagar"] = round(estado_de_resultados2022["isr"] + estado_de_resultados2022["ptu"],2)
+estado_de_resultados2022["ptu"] = round(estado_de_resultados2022["utilidad_antes_impuestos"] * 0.10, 2)
+estado_de_resultados2022["impuestos_por_pagar"] = round(
+    estado_de_resultados2022["isr"] + estado_de_resultados2022["ptu"], 2)
 estado_de_resultados2022["utilidad_del_ejercicio"] = round(estado_de_resultados2022["utilidad_antes_impuestos"] - \
-                                                     estado_de_resultados2022["impuestos_por_pagar"],2)
+                                                           estado_de_resultados2022["impuestos_por_pagar"], 2)
 
 balance_general2022 = {
     "activo_circulante": estado_financiero2022["cuentasxcobrar"] + estado_financiero2022["efectivo"] +
@@ -229,36 +191,34 @@ balance_general2022["total_pasivos"] = balance_general2022["pasivo_corto_plazo"]
 balance_general2022["total_capital_contable"] = balance_general2022["capital_contribuido"] + balance_general2022[
     "capital_ganado"]
 
-# print(tabulate(tabla_bg2021, headers="firstrow", tablefmt="fancy_grid"))
-# print(tabulate(tabla_er2021, headers="firstrow", tablefmt="fancy_grid"))
-
-tabla_er2022 = [[" ESTADO DE RESULTADOS 2022 ","","","",""],
-                ["","1","2","3","4"],
-                ["Ventas","","","",f"${estado_financiero2022['ventas']}"],
-                ["Costo de Ventas","","","",f"${estado_financiero2022['costodeventas']}"],
-                ["","","","Utilidad Bruta",f"${estado_de_resultados2022['utilidad_bruta']}"],
-                ["","","","",""],
-                ["Gastos de venta","","",f"${estado_financiero2022['gastosdeventas']}",""],
-                ["Gastos de Administracion","","",f"${estado_financiero2022['gastosdeadministracion']}",""],
-                ["Gastos x Depreciación","","",f"${estado_financiero2022['gastospordepreciacion']}",""],
-                ["Gastos Financieros","",f"${estado_financiero2022['gastosfinancieros']}","",""],
-                ["Productos Financieros","",f"${estado_financiero2022['productosfinancieros']}","",""],
-                ["Resul. Intgrl d Finan.","",f"${estado_de_resultados2022['resultado_integral_financiamento']}","",""],
-                ["","","","Total de Gastos Operativos",f"${estado_de_resultados2022['total_gastos_operacion']}"],
-                ["","","","Utilidad Operativa",f"${estado_de_resultados2022['utilidad_operativa']}"],
-                ["","","","",""],
-                ["Otros Gastos","","",f"${estado_financiero2022['otrosgastos']}",""],
-                ["Otros Productos","","",f"${estado_financiero2022['otrosproductos']}",""],
-                ["","","","Total de Otros Gastos y Productos",f"${estado_de_resultados2022['total_otros_gastos']}"],
-                ["","","","Utilidad Antes de Impuestos",f"${estado_de_resultados2022['utilidad_antes_impuestos']}"],
-                ["","","","",""],
-                ["ISR","","30%",f"${estado_de_resultados2022['isr']}",""],
-                ["PTU","","10%",f"${estado_de_resultados2022['ptu']}",""],
-                ["","","","Total de Impuestos x Pagar",f"${estado_de_resultados2022['impuestos_por_pagar']}"],
-                ["","","","Utilidad Neta del Ejercicio",f"${estado_de_resultados2022['utilidad_del_ejercicio']}"]
+tabla_er2022 = [[f" ESTADO DE RESULTADOS {ending_year} ", "", "", "", ""],
+                ["", "1", "2", "3", "4"],
+                ["Ventas", "", "", "", f"${estado_financiero2022['ventas']}"],
+                ["Costo de Ventas", "", "", "", f"${estado_financiero2022['costodeventas']}"],
+                ["", "", "", "Utilidad Bruta", f"${estado_de_resultados2022['utilidad_bruta']}"],
+                ["", "", "", "", ""],
+                ["Gastos de venta", "", "", f"${estado_financiero2022['gastosdeventas']}", ""],
+                ["Gastos de Administracion", "", "", f"${estado_financiero2022['gastosdeadministracion']}", ""],
+                ["Gastos x Depreciación", "", "", f"${estado_financiero2022['gastospordepreciacion']}", ""],
+                ["Gastos Financieros", "", f"${estado_financiero2022['gastosfinancieros']}", "", ""],
+                ["Productos Financieros", "", f"${estado_financiero2022['productosfinancieros']}", "", ""],
+                ["Resul. Intgrl d Finan.", "", f"${estado_de_resultados2022['resultado_integral_financiamento']}", "",
+                 ""],
+                ["", "", "", "Total de Gastos Operativos", f"${estado_de_resultados2022['total_gastos_operacion']}"],
+                ["", "", "", "Utilidad Operativa", f"${estado_de_resultados2022['utilidad_operativa']}"],
+                ["", "", "", "", ""],
+                ["Otros Gastos", "", "", f"${estado_financiero2022['otrosgastos']}", ""],
+                ["Otros Productos", "", "", f"${estado_financiero2022['otrosproductos']}", ""],
+                ["", "", "", "Total de Otros Gastos y Productos", f"${estado_de_resultados2022['total_otros_gastos']}"],
+                ["", "", "", "Utilidad Antes de Impuestos", f"${estado_de_resultados2022['utilidad_antes_impuestos']}"],
+                ["", "", "", "", ""],
+                ["ISR", "", "30%", f"${estado_de_resultados2022['isr']}", ""],
+                ["PTU", "", "10%", f"${estado_de_resultados2022['ptu']}", ""],
+                ["", "", "", "Total de Impuestos x Pagar", f"${estado_de_resultados2022['impuestos_por_pagar']}"],
+                ["", "", "", "Utilidad Neta del Ejercicio", f"${estado_de_resultados2022['utilidad_del_ejercicio']}"]
                 ]
 
-tabla_bg2022 = [["BALANCE GENERAL 2022", "", "", "", ""],
+tabla_bg2022 = [[f"BALANCE GENERAL {ending_year}", "", "", "", ""],
                 ["Efectivo", "", f"${estado_financiero2022['efectivo']:,.2f}", "", ""],
                 ["Cuentas por Cobrar", "", f"${estado_financiero2022['cuentasxcobrar']:,.2f}", "", ""],
                 ["Inventarios", "", f"${estado_financiero2022['inventarios']:,.2f}", "", ""],
@@ -299,15 +259,10 @@ tabla_bg2022 = [["BALANCE GENERAL 2022", "", "", "", ""],
                  f"${balance_general2022['capital_ganado']:,.2f}", ""],
                 ["", "", "", "Total Capital Contable", f"${balance_general2022['total_capital_contable']:,.2f}"]]
 
-# print(tabulate(tabla_bg2022, headers="firstrow", tablefmt="fancy_grid"))
-# print(tabulate(tabla_er2022, headers="firstrow", tablefmt="fancy_grid"))
-
 bg = [["LA COSTEÑITA.COM SA DE CV ", "", "", "", ""],
       ["Balance General", "", "", "", ""],
       ["Activo Circulante", "", "$200", "", ""],
       ["Efectivo", "", f"${estado_financiero2021['efectivo']:.2f}", "", ""]]
-
-# print(tabulate(bg, headers="firstrow", tablefmt="fancy_grid"))
 
 # Razones Financieras
 
@@ -336,8 +291,8 @@ ppp_2021 = 360 / rotacioncxp2021
 ppp_2022 = 360 / rotacioncxp2022
 ciclo_operativo2021 = epi_2021 + ppc_2021
 ciclo_operativo2022 = epi_2022 + ppc_2022
-ciclo_conversion_efectivo2021 = ppp_2021 - ciclo_operativo2021
-ciclo_conversion_efectivo2022 = ppp_2022 - ciclo_operativo2022
+ciclo_conversion_efectivo2021 = ciclo_operativo2021 - ppp_2021
+ciclo_conversion_efectivo2022 = ciclo_operativo2022 - ppp_2022
 
 # Liquidez
 
@@ -382,66 +337,94 @@ rendimiento_capital2021 = estado_de_resultados2021["utilidad_del_ejercicio"] / b
 rendimiento_capital2022 = estado_de_resultados2022["utilidad_del_ejercicio"] / balance_general2022[
     "capital_contribuido"]
 
-razones_financieras = [["Razones Financieras", "", "2021", "2022"],
-                          ["Razones de Actividad", "", "", ""],
-                            ["Rotacion de Inventario", "", f"{rotacion_inv2021:.2f}", f"{rotacion_inv2022:.2f}"],
-                            ["Rotacion de Cuentas por Cobrar", "", f"{rotacion_cxc2021:.2f}",
-                                f"{rotacion_cxc2022:.2f}"],
-                            ["Rotacion de Cuentas por Pagar", "", f"{rotacioncxp2021:.2f}",
-                                f"{rotacioncxp2022:.2f}"],
-                            ["Rotacion de Activos No Circulante", "", f"{rotacion_anc2021:.2f}",
-                                f"{rotacion_anc2022:.2f}"],
-                            ["Rotacion de Activos Totales", "", f"{rotacion_at2021:.2f}",
-                                f"{rotacion_at2022:.2f}"],
-                            ["", "", "", ""],
-                            ["Ciclo de Conversión de Efectivo", "", "", ""],
-                            ["Capital de Trabajo", "", f"${capital_de_trabajo2021:.2f}", f"${capital_de_trabajo2022:.2f}"],
-                            ["Edad Promedio de Inventarios", "", f"{epi_2021:.2f}", f"{epi_2022:.2f}"],
-                            ["Periodo Promedio de Cobro", "", f"{ppc_2021:.2f}", f"{ppc_2022:.2f}"],
-                            ["Periodo Promedio de Pago", "", f"{ppp_2021:.2f}", f"{ppp_2022:.2f}"],
-                            ["Ciclo Operativo", "", f"{ciclo_operativo2021:.2f}", f"{ciclo_operativo2022:.2f}"],
-                            ["Ciclo de Conversión de Efectivo", "", f"{ciclo_conversion_efectivo2021:.2f}", f"{ciclo_conversion_efectivo2022:.2f}"],
-                            ["", "", "", ""],
-                            ["Razones de Liquidez", "", "2021", "2022"],
-                            ["Liquidez", "", f"{liquidez2021:.2f}", f"{liquidez2022:.2f}"],
-                            ["Prueba Acida", "", f"{prueba_acida2021:.2f}", f"{prueba_acida2022:.2f}"],
-                            ["Efectivo", "", f"{efectivo2021:.2f}", f"{efectivo2022:.2f}"],
-                            ["", "", "", ""],
-                            ["Razones de Endeudamiento", "", "2021", "2022"],
-                            ["Razon de Endeudamiento", "", f"{razon_endeudamiento2021:.2f}",
-                                f"{razon_endeudamiento2022:.2f}"],
-                            ["Razon de Capital", "", f"{razon_capital2021:.2f}", f"{razon_capital2022:.2f}"],
-                            ["Razón de Endeudamiento sobre Capital", "", f"{razon_deuda_capital2021:.2f}",
-                                f"{razon_deuda_capital2022:.2f}"],
-                            ["Razon de Cargos de Intereses Fijos", "", f"{razon_cargo_interes2021:.2f}",
-                                f"{razon_cargo_interes2022:.2f}"],
-                            ["", "", "", ""],
-                            ["Razones de Rentabilidad", "", "2021", "2022"],
-                            ["Margen de Utilidad", "", f"{margen_utilidad2021:.2f}", f"{margen_utilidad2022:.2f}"],
-                            ["Margen Bruto", "", f"{margen_bruto2021:.2f}", f"{margen_bruto2022:.2f}"],
-                            ["Margen Operativo", "", f"{margen_operativo2021:.2f}", f"{margen_operativo2022:.2f}"],
-                            ["Rendimiento sobre Activos", "", f"{rendimiento_activos2021:.2f}",
-                                f"{rendimiento_activos2022:.2f}"],
-                            ["Rendimiento sobre Patrimonio", "", f"{rendimiento_patrimonio2021:.2f}",
-                                f"{rendimiento_patrimonio2022:.2f}"],
-                            ["Rendimiento sobre Capital", "", f"{rendimiento_capital2021:.2f}",
-                                f"{rendimiento_capital2022:.2f}"]]
+razones_financieras = [["Razones Financieras", "", "", "", ""],
+                       ["Razones de Liquidez", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
+                       ["Liquidez", "", f"{liquidez2021:.2f}", f"{liquidez2022:.2f}",
+                        f"La empresa tiene una razón circulante {'dentro del' if 1 <= liquidez2021 <= 2 else 'fuera del'} rango aceptable y"
+                        f"\n del ejercicio del {starting_year} al {ending_year} {'mejoro' if liquidez2022 > liquidez2021 else 'empeoro'} su razón circulante en "
+                        f"{abs(liquidez2022 - liquidez2021):.2f}."],
+                       ["Prueba Acida", "", f"{prueba_acida2021:.2f}", f"{prueba_acida2022:.2f}",
+                        f"La empresa tiene una prueba acida {'dentro del' if 1 <= prueba_acida2021 <= 1.5 else 'fuera del'} rango aceptable"
+                        f"\ny del ejercicio del {starting_year} al {ending_year} {'mejoro' if prueba_acida2022 > prueba_acida2021 else 'empeoro'} su prueba "
+                        f"acida en {abs(prueba_acida2022 - prueba_acida2021):.2f}."],
+                       ["Efectivo", "", f"{efectivo2021:.2f}", f"{efectivo2022:.2f}",
+                        f"La empresa por cada peso que debe en el banco tiene ${efectivo2021:.2f} centavos"
+                        f"\n{'incrementando un' if efectivo2022 > efectivo2021 else 'disminuyendo un'} "
+                        f"{abs(efectivo2022 - efectivo2021):.2f} centavos del ejercicio del {starting_year} al {ending_year}."],
+                       ["", "", "", ""],
+                       ["Razones de Actividad", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
+                       ["Rotacion de Inventario", "", f"{rotacion_inv2021:.2f}", f"{rotacion_inv2022:.2f}",
+                        f"La empresa {'aumentó' if rotacion_inv2021 < rotacion_inv2022 else 'disminuyó'} su Rotación de Inventario del "
+                        f"{starting_year} al {ending_year}."],
+                       ["Rotacion de Cuentas por Cobrar", "", f"{rotacion_cxc2021:.2f}",
+                        f"{rotacion_cxc2022:.2f}",
+                        f"La empresa {'aumentó' if rotacion_cxc2021 < rotacion_cxc2022 else 'disminuyó'} su Rotación de Cuentas por Cobrar "
+                        f"del {starting_year} al {ending_year}."],
+                       ["Rotacion de Cuentas por Pagar", "", f"{rotacioncxp2021:.2f}",
+                        f"{rotacioncxp2022:.2f}",
+                        f"La empresa {'aumentó' if rotacioncxp2021 < rotacioncxp2022 else 'disminuyó'} su Rotación de Cuentas por Pagar "
+                        f"del {starting_year} al {ending_year}."],
+                       ["Rotacion de Activos No Circulantes", "", f"{rotacion_anc2021:.2f}",
+                        f"{rotacion_anc2022:.2f}",
+                        f"La empresa {'aumentó' if rotacion_anc2021 < rotacion_anc2022 else 'disminuyó'} su Rotación de No Circulantes del "
+                        f"{starting_year} al {ending_year}."],
+                       ["Rotacion de Activos Totales", "", f"{rotacion_at2021:.2f}",
+                        f"{rotacion_at2022:.2f}",
+                        f"La empresa {'aumentó' if rotacion_at2021 < rotacion_at2022 else 'disminuyó'} su Rotación de Activos Totales del "
+                        f"{starting_year} al {ending_year}."],
+                       ["", "", "", ""],
+                       ["Ciclo de Conversión de Efectivo", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
+                       ["Capital de Trabajo", "", f"${capital_de_trabajo2021:.2f}", f"${capital_de_trabajo2022:.2f}",
+                        f"La empresa {'incrementó' if capital_de_trabajo2021 < capital_de_trabajo2022 else 'disminuyó'} su Capital de "
+                        f"Trabajo del {starting_year} al {ending_year}."],
+                       ["Edad Promedio de Inventarios", "", f"{epi_2021:.2f}", f"{epi_2022:.2f}",
+                        f"La empresa {'incrementó' if epi_2021 < epi_2022 else 'disminuyó'} su Edad Promedio de Inventarios del {starting_year} al "
+                        f"{ending_year}."],
+                       ["Periodo Promedio de Cobro", "", f"{ppc_2021:.2f}", f"{ppc_2022:.2f}",
+                        f"La empresa {'incrementó' if ppc_2021 < ppc_2022 else 'disminuyó'} su Periodo Promedio de Cobro del {starting_year} al "
+                        f"{ending_year}."],
+                       ["Periodo Promedio de Pago", "", f"{ppp_2021:.2f}", f"{ppp_2022:.2f}",
+                        f"La empresa {'incrementó' if ppp_2021 < ppp_2022 else 'disminuyó'} su Periodo Promedio de Pago del {starting_year} al "
+                        f"{ending_year}."],
+                       ["Ciclo Operativo", "", f"{ciclo_operativo2021:.2f}", f"{ciclo_operativo2022:.2f}",
+                        f"La empresa {'incrementó' if ciclo_operativo2021 < ciclo_operativo2022 else 'disminuyó'} su Ciclo Operativo "
+                        f"del {starting_year} al {ending_year}."],
+                       ["Ciclo de Conversión de Efectivo", "", f"{ciclo_conversion_efectivo2021:.2f}",
+                        f"{ciclo_conversion_efectivo2022:.2f}",
+                        f"La empresa {'incrementó' if ciclo_conversion_efectivo2021 < ciclo_conversion_efectivo2022 else 'disminuyó'}"
+                        f"su Ciclo de Conversión de Efectivo del {starting_year} al {ending_year}."],
+                       ["", "", "", ""],
+                       ["Razones de Endeudamiento", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
+                       ["Razon de Endeudamiento", "", f"{razon_endeudamiento2021:.2f}",
+                        f"{razon_endeudamiento2022:.2f}",
+                        f"La empresa esta financiada en un {razon_endeudamiento2022 * 100:.2f}%"
+                        f"de deuda externa."],
+                       ["Razon de Capital", "", f"{razon_capital2021:.2f}", f"{razon_capital2022:.2f}",
+                        f"La empresa esta financiada en un {razon_capital2022 * 100:.2f}% de capital propio."],
+                       ["Razón de Endeudamiento sobre Capital", "", f"{razon_deuda_capital2021:.2f}",
+                        f"{razon_deuda_capital2022:.2f}"],
+                       ["Razon de Cargos de Intereses Fijos", "", f"{razon_cargo_interes2021:.2f}",
+                        f"{razon_cargo_interes2022:.2f}"],
+                       ["", "", "", ""],
+                       ["Razones de Rentabilidad", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
+                       ["Margen de Utilidad", "", f"{margen_utilidad2021:.2f}", f"{margen_utilidad2022:.2f}"],
+                       ["Margen Bruto", "", f"{margen_bruto2021:.2f}", f"{margen_bruto2022:.2f}"],
+                       ["Margen Operativo", "", f"{margen_operativo2021:.2f}", f"{margen_operativo2022:.2f}"],
+                       ["Rendimiento sobre Activos", "", f"{rendimiento_activos2021:.2f}",
+                        f"{rendimiento_activos2022:.2f}",
+                        f"La empresa {'incrementó' if rendimiento_activos2021 < rendimiento_activos2022 else 'disminuyó'} su Rendimiento sobre Activos del {starting_year} al {ending_year}."],
+                       ["Rendimiento sobre Patrimonio", "", f"{rendimiento_patrimonio2021:.2f}",
+                        f"{rendimiento_patrimonio2022:.2f}",
+                        f"La empresa {'incrementó' if rendimiento_patrimonio2021 < rendimiento_patrimonio2022 else 'disminuyó'} su Rendimiento sobre Patrimonio del {starting_year} al {ending_year}."],
+                       ["Rendimiento sobre Capital", "", f"{rendimiento_capital2021:.2f}",
+                        f"{rendimiento_capital2022:.2f}",
+                        f"La empresa {'incrementó' if rendimiento_capital2021 < rendimiento_capital2022 else 'disminuyó'} su Rendimiento sobre Capital del {starting_year} al {ending_year}."]]
 
+# print(tabulate(tabla_bg2021, headers="firstrow", tablefmt="fancy_grid"))
+# print(tabulate(tabla_er2021, headers="firstrow", tablefmt="fancy_grid"))
+# print(tabulate(tabla_bg2022, headers="firstrow", tablefmt="fancy_grid"))
+# print(tabulate(tabla_er2022, headers="firstrow", tablefmt="fancy_grid"))
 print(tabulate(razones_financieras, headers="firstrow", tablefmt="fancy_grid"))
-
-print("")
-print("Interpretaciones de las Razones Financieras.\n")
-# Interpretaciones de Razones de Actividad.
-print(f"La empresa {'aumentó' if rotacion_inv2021 < rotacion_inv2022 else 'disminuyó'} su Rotación de Inventario del 2021 al 2022.\n")
-print(f"La empresa {'aumentó' if rotacion_cxc2021 < rotacion_cxc2022 else 'disminuyó'} su Rotación de Cuentas por Cobrar del 2021 al 2022.\n")
-print(f"La empresa {'aumentó' if rotacioncxp2021 < rotacioncxp2022 else 'disminuyó'} su Rotación de Cuentas por Pagar del 2021 al 2022.\n")
-print(f"La empresa {'aumentó' if rotacion_anc2021 < rotacion_anc2022 else 'disminuyó'} su Rotación de Activos Fijos del 2021 al 2022.\n")
-print(f"La empresa {'aumentó' if rotacion_at2021 < rotacion_at2022 else 'disminuyó'} su Rotación de Activos Totales del 2021 al 2022.\n")
-
-
-print(f"La empresa tiene una razón circulante {'dentro del' if 1 < liquidez2021 < 2 else 'fuera del'} rango aceptable y "
-      f"del ej 2021 al 2022 {'mejoro' if liquidez2022 > liquidez2021 else 'empeoro'} su razón circulante en "
-      f"{abs(liquidez2022 - liquidez2021):.2f}.\n")
 
 # Analisis DuPont
 
@@ -456,10 +439,15 @@ roa2022 = ros2022 * rota2022
 roe = roa2021 * maf2021
 roe2022 = roa2022 * maf2022
 
-analisis_dupont = [["Analisis DuPont", "", "2021", "2022"],
-                     ["Margen de Utilidad Neta", "", f"{ros2021:.2%}", f"{ros2022:.2%}"],
-                        ["Rotacion de Activos", "", f"{rota2021:.2%}", f"{rota2022:.2%}"],
-                        ["Multiplicador de Apalancamiento Financiero", "", f"{maf2021:.2%}", f"{maf2022:.2%}"],
-                        ["Rendimiento sobre Activos", "", f"{roa2021:.2%}", f"{roa2022:.2%}"],
-                        ["Rendimiento sobre Capital", "", f"{roe:.2%}", f"{roe2022:.2%}"]]
+analisis_dupont = [["Analisis DuPont", "", f"{starting_year}", f"{ending_year}", "Interpretación"],
+                   ["Margen de Utilidad Neta", "", f"{ros2021:.2%}", f"{ros2022:.2%}",
+                    f"La empresa {'incrementó' if ros2021 < ros2022 else 'disminuyó'} su Margen de Utilidad Neta del {starting_year} al {ending_year}."],
+                   ["Rotacion de Activos", "", f"{rota2021:.2%}", f"{rota2022:.2%}",
+                    f"La empresa {'incrementó' if rota2021 < rota2022 else 'disminuyó'} su Rotación de Activos del {starting_year} al {ending_year}."],
+                   ["Multiplicador de Apalancamiento Financiero", "", f"{maf2021:.2%}", f"{maf2022:.2%}",
+                    f"La empresa {'incrementó' if maf2021 < maf2022 else 'disminuyó'} su Multiplicador de Apalancamiento Financiero del {starting_year} al {ending_year}."],
+                   ["Rendimiento sobre Activos", "", f"{roa2021:.2%}", f"{roa2022:.2%}",
+                    f"La empresa {'incrementó' if roa2021 < roa2022 else 'disminuyó'} su Rendimiento sobre Activos del {starting_year} al {ending_year}."],
+                   ["Rendimiento sobre Capital", "", f"{roe:.2%}", f"{roe2022:.2%}",
+                    f"La empresa {'incrementó' if roe < roe2022 else 'disminuyó'} su Rendimiento sobre Capital del {starting_year} al {ending_year}."]]
 print(tabulate(analisis_dupont, headers="firstrow", tablefmt="fancy_grid"))
